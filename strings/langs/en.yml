@@ -1,8 +1,8 @@
 name : 🇮🇩 Indonesian
 
 # General Strings
-general_1 : "ℹ️ Balas pesan pengguna atau berikan nama pengguna/id_pengguna."
-general_2 : "ℹ️ Kesalahan! Penggunaan Perintah yang Salah."
+general_1 : "ℹ️ Bᴀʟᴀs ᴘᴇsᴀɴ ᴘᴇɴɢɢᴜɴᴀ ᴀᴛᴀᴜ ʙᴇʀɪᴋᴀɴ ɴᴀᴍᴀ ᴘᴇɴɢɢᴜɴᴀ /id_pengguna."
+general_2 : "ℹ️ sᴀʟᴀʜ! ᴘᴇɴɢɢᴜɴᴀᴀɴ ᴘᴇʀɪɴᴛᴀʜ ʏᴀɴɢ sᴀʟᴀʜ."
 general_3 : "ℹ️ Beberapa **pengecualian terjadi** saat memproses kueri Anda.\n\nJenis Pengecualian:- {0}"
 general_4 : "ℹ️ Anda adalah admin anonim di grup obrolan ini!\nKembali ke Akun Pengguna Dari Hak Admin."
 general_5 : "ℹ️ Anda harus menjadi admin dengan mengelola hak obrolan suara untuk melakukan tindakan ini."
@@ -13,7 +13,7 @@ tg_1 : "ℹ️ Bot **kelebihan beban** dengan unduhan sekarang.\n\n**Coba Setela
 tg_2 : "⛔️ Gagal mengunduh media dari telegram."
 
 # Core - Call.py
-call_1 : "ℹ Bot memerlukan Izin **Admin** untuk mengundang akun asisten ke channel Anda."
+call_1 : "ℹ Bᴏᴛ ᴍᴇᴍᴇʀʟᴜᴋᴀɴ ɪᴊɪɴ **Admin** untuk mengundang akun asisten ke channel Anda."
 call_2 : "ℹ️ Asisten diblokir di grup atau channel Anda, harap batalkan pemblokiran.\n\n**Nama Pengguna Asisten:** @{0}\n**ID Asisten:** {1}"
 call_3 : "ℹ️ Pengecualian Terjadi Saat Mengundang Akun Asisten ke chat Anda.\n\n**Alasan**: {0}"
 call_4 : "ℹ️ Bot membutuhkan **Undang Pengguna Melalui Tautan** Izin untuk mengundang akun asisten ke grup obrolan Anda."
@@ -80,7 +80,7 @@ admin_34 : "⛔️ Gagal mencari aliran saat ini."
 
 # Start
 start_1 : "❤️ Terima kasih telah memasukkan saya ke {0}.\n{1} masih hidup.\n\nUntuk bantuan atau bantuan apa pun, periksa grup dan channel dukungan kami."
-start_2 : "👋🏻 Halo, Nama saya {0}.\n\nSaya bot telegram streaming dengan beberapa fitur berguna. Platform pendukung seperti Youtube, Spotify, Resso, AppleMusic , Soundcloud dll.\n\nJangan ragu untuk menambahkan saya ke Grup Anda."
+start_2 : "👋🏻 Halo, Nama saya {0}.\n\nSaya bot telegram streaming dengan beberapa fitur berguna. Platform pendukung seperti Youtube, Spotify, Resso, AppleMusic , Soundcloud dll.\n\nᴛᴀᴍʙᴀʜᴋᴀɴ sᴀʏᴀ ᴜɴᴛᴜᴋ ᴍᴇᴍᴜᴛᴀʀ ʟᴀɢᴜ ᴅɪ ɢʀᴏᴜᴘᴍᴜ."
 start_3 : "Selamat datang di {0}\n\nSaya memerlukan **izin admin** untuk bekerja dengan baik.\n\nNama Pengguna Asisten:- @{1}\nID Asisten:- {2} "
 start_4 : "Pemilik {0}[{1}] baru saja bergabung dengan obrolan Anda."
 start_5 : "Anggota Pengguna Sudo {0}[{1}] baru saja bergabung dengan obrolan Anda."
@@ -135,7 +135,7 @@ gstats_11 : "📊 **Statistik Umum {0}**\nPilih tombol dari bawah yang ingin And
 # Play 
 
 #Play Callback 
-playcb_1 : "❌ Ini bukan untuk Anda! Cari Lagu Anda Sendiri."
+playcb_1 : "❌ ʙᴜᴋᴀɴ ᴜɴᴛᴜᴋ ᴋᴀᴍᴜ! ᴄᴀʀɪ ʟᴀɢᴜᴍᴜ sᴇɴᴅɪʀɪ!"
 playcb_2 : "⏳ Mendapatkan Hasil Selanjutnya"
 
 # Putar Channel

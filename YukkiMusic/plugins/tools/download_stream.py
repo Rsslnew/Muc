@@ -37,8 +37,8 @@ from pyrogram.types import Message
 from youtubesearchpython import SearchVideos
 from yt_dlp import YoutubeDL
 
-from VIPMUSIC import app
-from VIPMUSIC.utils.extraction import extract_user
+from YukkiMusic import app
+from YukkiMusic.utils.extraction import extract_user
 from time import time
 from YukkiMusic.utils.extraction import extract_user
 from urllib.parse import urlparse

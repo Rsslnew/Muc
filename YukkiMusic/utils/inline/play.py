@@ -55,6 +55,7 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
         ],
         [
             InlineKeyboardButton(text="ᴍᴜᴛᴇ", callback_data=f"ADMIN Mute|{chat_id}"),
+            InlineKeyboardButton(text="📥 ᴀᴜᴅɪᴏ", callback_data=f"downloadaudio {videoid}"),
             InlineKeyboardButton(
                 text="ᴜɴᴍᴜᴛᴇ", callback_data=f"ADMIN Unmute|{chat_id}"
             ),

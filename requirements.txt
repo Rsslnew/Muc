@@ -7,6 +7,7 @@ ffmpeg-python
 gitpython
 gTTS
 googletrans
+gpytranslate
 googlesearch-python
 google_play_scraper #for playstore app search 
 hachoir

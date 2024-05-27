@@ -37,7 +37,9 @@ from YukkiMusic.utils.database import (
 from YukkiMusic.utils.decorators.language import LanguageStart
 from YukkiMusic.utils.formatters import get_readable_time
 from YukkiMusic.utils.functions import MARKDOWN, WELCOMEHELP
-from YukkiMusic.utils.inline import alive_panel, help_mark, private_panel, start_pannel
+from YukkiMusic.utils.inline import alive_panel, help_mark, private_panel, start_panel
+from time import time
+from YukkiMusic.utils.extraction import extract_user
 
 loop = asyncio.get_running_loop()
 
@@ -185,6 +187,7 @@ async def start_comm(client, message: Message, _):
                     [
                         InlineKeyboardButton(text="🎥 ᴡᴀᴛᴄʜ ", url=f"{link}"),
                         InlineKeyboardButton(text="🔄 ᴄʟᴏsᴇ", callback_data="close"),
+                        InlineKeyboardButton(text="📥 ᴀᴜᴅɪᴏ", callback_data=f"downloadaudio {query}"),
                     ],
                 ]
             )

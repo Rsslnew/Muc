@@ -37,7 +37,7 @@ from YukkiMusic.utils.database import (
 from YukkiMusic.utils.decorators.language import LanguageStart
 from YukkiMusic.utils.formatters import get_readable_time
 from YukkiMusic.utils.functions import MARKDOWN, WELCOMEHELP
-from YukkiMusic.utils.inline import alive_panel, help_mark, private_panel, start_panel
+from YukkiMusic.utils.inline import alive_panel, help_mark, private_panel, start_pannel
 from time import time
 from YukkiMusic.utils.extraction import extract_user
 

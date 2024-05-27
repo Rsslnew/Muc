@@ -1,14 +1,4 @@
-#
-# Copyright (C) 2024-present by TeamYukki@Github, < https://github.com/TeamYukki >.
-#
-# This file is part of < https://github.com/TeamYukki/YukkiMusicBot > project,
-# and is released under the "GNU v3.0 License Agreement".
-# Please see < https://github.com/TeamYukki/YukkiMusicBot/blob/master/LICENSE >
-#
-# All rights reserved.
-#
-
-
+import re
 import sys
 from os import getenv
 
@@ -16,16 +6,15 @@ from dotenv import load_dotenv
 from pyrogram import filters
 
 load_dotenv()
-import re
 
 # ________________________________________________________________________________#
 # Get it from my.telegram.org
-API_ID = int(getenv("API_ID", ""))
-API_HASH = getenv("API_HASH")
+API_ID = int(getenv("API_ID", "25347212"))
+API_HASH = getenv("API_HASH", "b059c9e1b867492f6f65ae8863a9e170")
 
 # ________________________________________________________________________________#
-## Get it from @Botfather in Telegram.
-BOT_TOKEN = getenv("BOT_TOKEN")
+# Get it from @Botfather in Telegram.
+BOT_TOKEN = getenv("BOT_TOKEN", "7091981616:AAG5hiwu5SawJuTQE2QpRO8WYNtjBs2yljA")
 
 # ________________________________________________________________________________#
 
@@ -36,12 +25,14 @@ ASSISTANT_PREFIX = getenv("ASSISTANT_PREFIX", ".")
 
 
 # ________________________________________________________________________________#
-# Database to save your chats and stats... Get MongoDB:-  https://telegra.ph/How-To-get-Mongodb-URI-04-06
-MONGO_DB_URI = getenv("MONGO_DB_URI", None)
+# Database to save your chats and stats... Get MongoDB:-
+# https://telegra.ph/How-To-get-Mongodb-URI-04-06
+MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://Naka:12345@cluster0.tpjc70h.mongodb.net/?retryWrites=true&w=majority")
 
 
 # ________________________________________________________________________________#
-# Custom max audio(music) duration for voice chat. set DURATION_LIMIT in variables with your own time(mins), Default to 60 mins.
+# Custom max audio(music) duration for voice chat. set DURATION_LIMIT in
+# variables with your own time(mins), Default to 60 mins.
 DURATION_LIMIT_MIN = int(
     getenv("DURATION_LIMIT", "50000")
 )  # Remember to give value in Minutes
@@ -56,12 +47,12 @@ SONG_DOWNLOAD_DURATION = int(
 
 # ________________________________________________________________________________#
 # You'll need a Private Group ID for this.
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", ""))
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1002045851145"))
 
 
 # ________________________________________________________________________________#
 # A name for your Music bot.
-MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "Mrr...prince")
+MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "TesterXBot")
 # ________________________________________________________________________________#
 
 PROTECT_CONTENT = getenv("PROTECT_CONTENT", "True")
@@ -70,7 +61,7 @@ PROTECT_CONTENT = getenv("PROTECT_CONTENT", "True")
 # ________________________________________________________________________________#
 # Your User ID.
 OWNER_ID = list(
-    map(int, getenv("OWNER_ID", "6815918609").split())
+    map(int, getenv("OWNER_ID", "7081940217").split())
 )  # Input type must be interger
 
 
@@ -78,7 +69,8 @@ OWNER_ID = list(
 # Get it from http://dashboard.heroku.com/account
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
-# You have to Enter the app name which you gave to identify your  Music Bot in Heroku.
+# You have to Enter the app name which you gave to identify your  Music
+# Bot in Heroku.
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 
 
@@ -86,28 +78,29 @@ HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 # For customized or modified Repository
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/Vivekkumar-IN/YukkiMusic",
+    "https://github.com/ElizabethXty/MusicIndo",
 )
-UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
+UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "dev")
 
 # GIT TOKEN ( if your edited repo is private)
 GIT_TOKEN = getenv(
     "GIT_TOKEN",
-    "",
+    "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",
 )
 
 
 # ________________________________________________________________________________#
 # Only  Links formats are  accepted for this Var value.
 SUPPORT_CHANNEL = getenv(
-    "SUPPORT_CHANNEL", "https://t.me/Quizess_prince"
-)  # Example:- https://t.me/Quizess_prince
+    "SUPPORT_CHANNEL", "https://t.me/ImseeU"
+)  # Example:- https://t.me/
 SUPPORT_GROUP = getenv(
-    "SUPPORT_GROUP", "https://t.me/Quizess_prince"
-)  # Example:- https://t.me/Quizess_prince
+    "SUPPORT_GROUP", "https://t.me/miniiiiupdate"
+)  # Example:- https://t.me/
 
 # ________________________________________________________________________________#
-# Set it in True if you want to leave your assistant after a certain amount of time. [Set time via AUTO_LEAVE_ASSISTANT_TIME]
+# Set it in True if you want to leave your assistant after a certain
+# amount of time. [Set time via AUTO_LEAVE_ASSISTANT_TIME]
 AUTO_LEAVING_ASSISTANT = getenv("AUTO_LEAVING_ASSISTANT", False)
 
 # Time after which you're assistant account will leave chats automatically.
@@ -123,23 +116,28 @@ AUTO_SUGGESTION_TIME = int(
 )  # Remember to give value in Seconds
 
 
-# Set it True if you want to bot to suggest about bot commands to random chats of your bots.
+# Set it True if you want to bot to suggest about bot commands to random
+# chats of your bots.
 AUTO_SUGGESTION_MODE = getenv("AUTO_SUGGESTION_MODE", False)
 
 
 # ________________________________________________________________________________#
-# Set it true if you want your bot to be private only [You'll need to allow CHAT_ID via /authorize command then only your bot will play music in that chat.]
+# Set it true if you want your bot to be private only [You'll need to
+# allow CHAT_ID via /authorize command then only your bot will play music
+# in that chat.]
 PRIVATE_BOT_MODE = getenv("PRIVATE_BOT_MODE", "False")
 
 
-# ________________________________________________________________________________## Time sleep duration For Youtube Downloader
+# ________________________________________________________________________________##
+# Time sleep duration For Youtube Downloader
 YOUTUBE_DOWNLOAD_EDIT_SLEEP = int(getenv("YOUTUBE_EDIT_SLEEP", "3"))
 
 # Time sleep duration For Telegram Downloader
 TELEGRAM_DOWNLOAD_EDIT_SLEEP = int(getenv("TELEGRAM_EDIT_SLEEP", "5"))
 
 
-# ________________________________________________________________________________## Your Github Repo.. Will be shown on /start Command
+# ________________________________________________________________________________##
+# Your Github Repo.. Will be shown on /start Command
 GITHUB_REPO = getenv(
     "GITHUB_REPO",
 )
@@ -154,7 +152,8 @@ SPOTIFY_CLIENT_SECRET = getenv(
 
 
 # ________________________________________________________________________________#
-# Maximum number of video calls allowed on bot. You can later set it via /set_video_limit on telegram
+# Maximum number of video calls allowed on bot. You can later set it via
+# /set_video_limit on telegram
 VIDEO_STREAM_LIMIT = int(getenv("VIDEO_STREAM_LIMIT", "5"))
 
 
@@ -162,7 +161,8 @@ VIDEO_STREAM_LIMIT = int(getenv("VIDEO_STREAM_LIMIT", "5"))
 # Maximum Limit Allowed for users to save playlists on bot's server
 SERVER_PLAYLIST_LIMIT = int(getenv("SERVER_PLAYLIST_LIMIT", "50"))
 
-# MaximuM limit for fetching playlist's track from youtube, spotify, apple links.
+# MaximuM limit for fetching playlist's track from youtube, spotify, apple
+# links.
 PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", "50"))
 
 
@@ -191,12 +191,13 @@ TG_VIDEO_FILESIZE_LIMIT = int(
 # ________________________________________________________________________________#
 # If you want your bot to setup the commands automatically in the bot's menu set it to true.
 # Refer to https://i.postimg.cc/Bbg3LQTG/image.png
-SET_CMDS = getenv("SET_CMDS", "False")
+SET_CMDS = getenv("SET_CMDS", "True")
 
 
 # ________________________________________________________________________________#
-# You'll need a Pyrogram String Session for these vars. Generate String from our session generator bot @YukkiStringBot
-STRING1 = getenv("STRING_SESSION", None)
+# You'll need a Pyrogram String Session for these vars. Generate String
+# from our session generator bot @YukkiStringBot
+STRING1 = getenv("STRING_SESSION", "BQDNvmIAdPI9Rz8GWhq3SxmO6l1m5CBl6W9wmBf_aMQQa2NULpUt3tFBDGo56wtjKy_eIThzB4t3A0gH_7_fe0RiO0j5gQbhDRgS7pFYhF2ZiIHfuGunGT_8u8u-fbAaHOguClUsGRXAzWed2-bE7Vsy4YZ7cY2rPamCaYbwg0OXifexStZp6JqrEAEP7a92yvoT4VGNKcEnPXrkl2hSMZesv8zMO8Rml7bmQU0e9Dtjmp6I3C0WsjyKoLlA2L9IMA6hvONKRExQgTQ2KeDWPbr1_KUgO36A-EIJPImdxJFpClijuUT85_FtLujLadnWSsie5_9eL3HK3gf13_VRz0dG0ftrbgAAAABOuR99AA")
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
@@ -205,7 +206,7 @@ STRING5 = getenv("STRING_SESSION5", None)
 # ________________________________________________________________________________#
 
 
-#  __     ___    _ _  ___  _______   __  __ _    _  _____ _____ _____   ____   ____ _______
+#  __     ___    _ _  ___  _______   __  __ _    _  _____ _____ _____   __
 #  \ \   / / |  | | |/ / |/ /_   _| |  \/  | |  | |/ ____|_   _/ ____| |  _ \ / __ \__   __|
 #   \ \_/ /| |  | | ' /| ' /  | |   | \  / | |  | | (___   | || |      | |_) | |  | | | |
 #    \   / | |  | |  < |  <   | |   | |\/| | |  | |\___ \  | || |      |  _ <| |  | | | |
@@ -213,11 +214,11 @@ STRING5 = getenv("STRING_SESSION5", None)
 #     |_|   \____/|_|\_\_|\_\_____| |_|  |_|\____/|_____/|_____\_____| |____/ \____/  |_|
 
 
-### DONT TOUCH or EDIT codes after this line
+# DONT TOUCH or EDIT codes after this line
 BANNED_USERS = filters.user()
 YTDOWNLOADER = 1
 LOG = 2
-LOG_FILE_NAME = "Yukkilogs.txt"
+LOG_FILE_NAME = "Kenlogs.txt"
 adminlist = {}
 lyrical = {}
 chatstats = {}
@@ -240,66 +241,66 @@ PHOTO = list(
 
 START_IMG_URL = getenv(
     "START_IMG_URL",
-    "https://te.legra.ph/file/4ec5ae4381dffb039b4ef.jpg",
+    "https://telegra.ph/file/d4fd70279f80c17328615.jpg",
 )
 PING_IMG_URL = getenv(
     "PING_IMG_URL",
-    "https://telegra.ph/file/91533956c91d0fd7c9f20.jpg",
+    "https://telegra.ph/file/d4fd70279f80c17328615.jpg",
 )
 
 PLAYLIST_IMG_URL = getenv(
     "PLAYLIST_IMG_URL",
-    "https://telegra.ph/file/f4edfbd83ec3150284aae.jpg",
+    "https://telegra.ph/file/d4fd70279f80c17328615.jpg",
 )
 
 GLOBAL_IMG_URL = getenv(
     "GLOBAL_IMG_URL",
-    "https://telegra.ph/file/de1db74efac1770b1e8e9.jpg",
+    "https://telegra.ph/file/d4fd70279f80c17328615.jpg",
 )
 
 STATS_IMG_URL = getenv(
     "STATS_IMG_URL",
-    "https://telegra.ph/file/4dd9e2c231eaf7c290404.jpg",
+    "https://telegra.ph/file/d4fd70279f80c17328615.jpg",
 )
 
 TELEGRAM_AUDIO_URL = getenv(
     "TELEGRAM_AUDIO_URL",
-    "https://telegra.ph/file/8234d704952738ebcda7f.jpg",
+    "https://telegra.ph/file/d4fd70279f80c17328615.jpg",
 )
 
 TELEGRAM_VIDEO_URL = getenv(
     "TELEGRAM_VIDEO_URL",
-    "https://telegra.ph/file/8d02ff3bde400e465219a.jpg",
+    "https://telegra.ph/file/d4fd70279f80c17328615.jpg",
 )
 
 STREAM_IMG_URL = getenv(
     "STREAM_IMG_URL",
-    "https://telegra.ph/file/e24f4a5f695ec5576a8f3.jpg",
+    "https://telegra.ph/file/d4fd70279f80c17328615.jpg",
 )
 
 SOUNCLOUD_IMG_URL = getenv(
     "SOUNCLOUD_IMG_URL",
-    "https://telegra.ph/file/7645d1e04021323c21db9.jpg",
+    "https://telegra.ph/file/d4fd70279f80c17328615.jpg",
 )
 
 YOUTUBE_IMG_URL = getenv(
     "YOUTUBE_IMG_URL",
-    "https://telegra.ph/file/76d29aa31c40a7f026d7e.jpg",
+    "https://telegra.ph/file/d4fd70279f80c17328615.jpg",
 )
 
 SPOTIFY_ARTIST_IMG_URL = getenv(
     "SPOTIFY_ARTIST_IMG_URL",
-    "https://telegra.ph/file/b7758d4e1bc32aa9fb6ec.jpg",
+    "https://telegra.ph/file/d4fd70279f80c17328615.jpg",
 )
 
 SPOTIFY_ALBUM_IMG_URL = getenv(
     "SPOTIFY_ALBUM_IMG_URL",
-    "https://telegra.ph/file/60ed85638e00df10985db.jpg",
+    "https://telegra.ph/file/d4fd70279f80c17328615.jpg",
 )
 
 SPOTIFY_PLAYLIST_IMG_URL = getenv(
     "SPOTIFY_PLAYLIST_IMG_URL",
-    "https://telegra.ph/file/f4edfbd83ec3150284aae.jpg",
+    "https://telegra.ph/file/d4fd70279f80c17328615.jpg",
 )
 
 
@@ -344,7 +345,7 @@ if GITHUB_REPO:
 
 
 if PING_IMG_URL:
-    if PING_IMG_URL != "https://telegra.ph/file/91533956c91d0fd7c9f20.jpg":
+    if PING_IMG_URL != "https://telegra.ph/file/d4fd70279f80c17328615.jpg":
         if not re.match("(?:http|https)://", PING_IMG_URL):
             print(
                 "[ERROR] - Your PING_IMG_URL url is wrong. Please ensure that it starts with https://"
@@ -352,7 +353,7 @@ if PING_IMG_URL:
             sys.exit()
 
 if PLAYLIST_IMG_URL:
-    if PLAYLIST_IMG_URL != "https://telegra.ph/file/f4edfbd83ec3150284aae.jpg":
+    if PLAYLIST_IMG_URL != "https://telegra.ph/file/d4fd70279f80c17328615.jpg":
         if not re.match("(?:http|https)://", PLAYLIST_IMG_URL):
             print(
                 "[ERROR] - Your PLAYLIST_IMG_URL url is wrong. Please ensure that it starts with https://"
@@ -360,7 +361,7 @@ if PLAYLIST_IMG_URL:
             sys.exit()
 
 if GLOBAL_IMG_URL:
-    if GLOBAL_IMG_URL != "https://telegra.ph/file/de1db74efac1770b1e8e9.jpg":
+    if GLOBAL_IMG_URL != "https://telegra.ph/file/d4fd70279f80c17328615.jpg":
         if not re.match("(?:http|https)://", GLOBAL_IMG_URL):
             print(
                 "[ERROR] - Your GLOBAL_IMG_URL url is wrong. Please ensure that it starts with https://"
@@ -369,7 +370,7 @@ if GLOBAL_IMG_URL:
 
 
 if STATS_IMG_URL:
-    if STATS_IMG_URL != "https://telegra.ph/file/4dd9e2c231eaf7c290404.jpg":
+    if STATS_IMG_URL != "https://telegra.ph/file/d4fd70279f80c17328615.jpg":
         if not re.match("(?:http|https)://", STATS_IMG_URL):
             print(
                 "[ERROR] - Your STATS_IMG_URL url is wrong. Please ensure that it starts with https://"
@@ -378,7 +379,7 @@ if STATS_IMG_URL:
 
 
 if TELEGRAM_AUDIO_URL:
-    if TELEGRAM_AUDIO_URL != "https://telegra.ph/file/8234d704952738ebcda7f.jpg":
+    if TELEGRAM_AUDIO_URL != "https://telegra.ph/file/d4fd70279f80c17328615.jpg":
         if not re.match("(?:http|https)://", TELEGRAM_AUDIO_URL):
             print(
                 "[ERROR] - Your TELEGRAM_AUDIO_URL url is wrong. Please ensure that it starts with https://"
@@ -387,7 +388,7 @@ if TELEGRAM_AUDIO_URL:
 
 
 if STREAM_IMG_URL:
-    if STREAM_IMG_URL != "https://telegra.ph/file/e24f4a5f695ec5576a8f3.jpg":
+    if STREAM_IMG_URL != "https://telegra.ph/file/d4fd70279f80c17328615.jpg":
         if not re.match("(?:http|https)://", STREAM_IMG_URL):
             print(
                 "[ERROR] - Your STREAM_IMG_URL url is wrong. Please ensure that it starts with https://"
@@ -396,7 +397,7 @@ if STREAM_IMG_URL:
 
 
 if SOUNCLOUD_IMG_URL:
-    if SOUNCLOUD_IMG_URL != "https://telegra.ph/file/7645d1e04021323c21db9.jpg":
+    if SOUNCLOUD_IMG_URL != "https://telegra.ph/file/d4fd70279f80c17328615.jpg":
         if not re.match("(?:http|https)://", SOUNCLOUD_IMG_URL):
             print(
                 "[ERROR] - Your SOUNCLOUD_IMG_URL url is wrong. Please ensure that it starts with https://"
@@ -404,7 +405,7 @@ if SOUNCLOUD_IMG_URL:
             sys.exit()
 
 if YOUTUBE_IMG_URL:
-    if YOUTUBE_IMG_URL != "https://telegra.ph/file/76d29aa31c40a7f026d7e.jpg":
+    if YOUTUBE_IMG_URL != "https://telegra.ph/file/d4fd70279f80c17328615.jpg":
         if not re.match("(?:http|https)://", YOUTUBE_IMG_URL):
             print(
                 "[ERROR] - Your YOUTUBE_IMG_URL url is wrong. Please ensure that it starts with https://"
@@ -413,7 +414,7 @@ if YOUTUBE_IMG_URL:
 
 
 if TELEGRAM_VIDEO_URL:
-    if TELEGRAM_VIDEO_URL != "https://telegra.ph/file/8d02ff3bde400e465219a.jpg":
+    if TELEGRAM_VIDEO_URL != "https://telegra.ph/file/d4fd70279f80c17328615.jpg":
         if not re.match("(?:http|https)://", TELEGRAM_VIDEO_URL):
             print(
                 "[ERROR] - Your TELEGRAM_VIDEO_URL url is wrong. Please ensure that it starts with https://"

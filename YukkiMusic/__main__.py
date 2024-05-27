@@ -81,9 +81,9 @@ async def help_parser(name, keyboard=None):
     return (
         """ʜᴇʟʟᴏ {first_name},
 
-ᴄʟɪᴄᴋ ᴏɴ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴs ғᴏʀ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ.
+ᴄʟɪᴄᴋ ʙᴜᴛᴛᴏɴ ᴅɪʙᴀᴡᴀʜ ᴜɴᴛᴜᴋ ɪɴғᴏʀᴍᴀᴛɪᴏɴ.
 
-ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs sᴛᴀʀᴛs ᴡɪᴛʜ :-  /
+sᴇᴍᴜᴀ ᴘᴇʀɪɴᴛᴀʜ ʜᴀʀᴜs ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ :-  /
 """.format(
             first_name=name
         ),

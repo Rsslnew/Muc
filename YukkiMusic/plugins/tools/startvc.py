@@ -16,7 +16,7 @@ from pyrogram import filters
 from YukkiMusic.core.call import Yukki
 from pyrogram.types import VideoChatEnded, Message
 from pytgcalls import PyTgCalls, StreamType
-from pytgcalls.types.input_stream import StreamAudioEnded
+from pytgcalls.types.stream import StreamAudioEnded
 from pytgcalls.exceptions import (NoActiveGroupCall, AlreadyJoinedError)
 from ntgcalls import TelegramServerError
 

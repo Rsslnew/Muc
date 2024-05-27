@@ -30,6 +30,8 @@ ntgcalls==1.1.2
 pyrogram
 python-dotenv
 pyyaml
+pytz
+future==0.18.3
 requests
 speedtest-cli
 secureme==0.0.4
@@ -45,4 +47,5 @@ git+https://github.com/alexmercerind/youtube-search-python@main
 git+https://github.com/joetats/youtube_search@master
 uuid==1.30
 SafoneAPI
+wget
 #git+https://github.com/ElizabethXty/plugin@main

@@ -14,7 +14,7 @@ API_HASH = getenv("API_HASH", "b059c9e1b867492f6f65ae8863a9e170")
 
 # ________________________________________________________________________________#
 # Get it from @Botfather in Telegram.
-BOT_TOKEN = getenv("BOT_TOKEN", "7091981616:AAG5hiwu5SawJuTQE2QpRO8WYNtjBs2yljA")
+BOT_TOKEN = getenv("BOT_TOKEN", "7041791243:AAEs9OPmAX6FbqEl7IRX1UfWdRy-1XMSrq8")
 
 # ________________________________________________________________________________#
 

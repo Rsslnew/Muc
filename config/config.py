@@ -52,7 +52,7 @@ LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1002045851145"))
 
 # ________________________________________________________________________________#
 # A name for your Music bot.
-MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "TesterXBot")
+MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "SpotifyXBot")
 # ________________________________________________________________________________#
 
 PROTECT_CONTENT = getenv("PROTECT_CONTENT", "True")
@@ -162,7 +162,7 @@ VIDEO_STREAM_LIMIT = int(getenv("VIDEO_STREAM_LIMIT", "5"))
 
 # ________________________________________________________________________________#
 # Maximum Limit Allowed for users to save playlists on bot's server
-SERVER_PLAYLIST_LIMIT = int(getenv("SERVER_PLAYLIST_LIMIT", "50"))
+SERVER_PLAYLIST_LIMIT = int(getenv("SERVER_PLAYLIST_LIMIT", "100"))
 
 # MaximuM limit for fetching playlist's track from youtube, spotify, apple
 # links.
@@ -194,7 +194,7 @@ TG_VIDEO_FILESIZE_LIMIT = int(
 # ________________________________________________________________________________#
 # If you want your bot to setup the commands automatically in the bot's menu set it to true.
 # Refer to https://i.postimg.cc/Bbg3LQTG/image.png
-SET_CMDS = getenv("SET_CMDS", "True")
+SET_CMDS = getenv("SET_CMDS", "False")
 
 
 # ________________________________________________________________________________#
@@ -244,56 +244,56 @@ PHOTO = list(
 
 START_IMG_URL = getenv(
     "START_IMG_URL",
-    "https://telegra.ph/file/d4fd70279f80c17328615.jpg",
+    "https://telegra.ph/file/c32bb8207d518b2f5cac9.jpg",
 )
 PING_IMG_URL = getenv(
     "PING_IMG_URL",
-    "https://telegra.ph/file/d4fd70279f80c17328615.jpg",
+    "https://telegra.ph/file/37c06804d750780de71d4.jpg",
 )
 
 PLAYLIST_IMG_URL = getenv(
     "PLAYLIST_IMG_URL",
-    "https://telegra.ph/file/d4fd70279f80c17328615.jpg",
+    "https://telegra.ph/file/a755288a4ce5f5a489d9d.jpg",
 )
 
 GLOBAL_IMG_URL = getenv(
     "GLOBAL_IMG_URL",
-    "https://telegra.ph/file/d4fd70279f80c17328615.jpg",
+    "https://telegra.ph/file/58c8159ed40a27174bcdb.jpg",
 )
 
 STATS_IMG_URL = getenv(
     "STATS_IMG_URL",
-    "https://telegra.ph/file/d4fd70279f80c17328615.jpg",
+    "https://telegra.ph/file/58c8159ed40a27174bcdb.jpg",
 )
 
 TELEGRAM_AUDIO_URL = getenv(
     "TELEGRAM_AUDIO_URL",
-    "https://telegra.ph/file/d4fd70279f80c17328615.jpg",
+    "https://telegra.ph/file/58c8159ed40a27174bcdb.jpg",
 )
 
 TELEGRAM_VIDEO_URL = getenv(
     "TELEGRAM_VIDEO_URL",
-    "https://telegra.ph/file/d4fd70279f80c17328615.jpg",
+    "https://telegra.ph/file/58c8159ed40a27174bcdb.jpg",
 )
 
 STREAM_IMG_URL = getenv(
     "STREAM_IMG_URL",
-    "https://telegra.ph/file/d4fd70279f80c17328615.jpg",
+    "https://telegra.ph/file/2e3a89053ffe8010bed4c.jpg",
 )
 
 SOUNCLOUD_IMG_URL = getenv(
     "SOUNCLOUD_IMG_URL",
-    "https://telegra.ph/file/d4fd70279f80c17328615.jpg",
+    "https://telegra.ph/file/2e3a89053ffe8010bed4c.jpg",
 )
 
 YOUTUBE_IMG_URL = getenv(
     "YOUTUBE_IMG_URL",
-    "https://telegra.ph/file/d4fd70279f80c17328615.jpg",
+    "https://telegra.ph/file/2e3a89053ffe8010bed4c.jpg",
 )
 
 SPOTIFY_ARTIST_IMG_URL = getenv(
     "SPOTIFY_ARTIST_IMG_URL",
-    "https://telegra.ph/file/d4fd70279f80c17328615.jpg",
+    "https://telegra.ph/file/2e3a89053ffe8010bed4c.jpg",
 )
 
 SPOTIFY_ALBUM_IMG_URL = getenv(
@@ -303,7 +303,7 @@ SPOTIFY_ALBUM_IMG_URL = getenv(
 
 SPOTIFY_PLAYLIST_IMG_URL = getenv(
     "SPOTIFY_PLAYLIST_IMG_URL",
-    "https://telegra.ph/file/d4fd70279f80c17328615.jpg",
+    "https://telegra.ph/file/2e3a89053ffe8010bed4c.jpg",
 )
 
 
@@ -408,7 +408,7 @@ if SOUNCLOUD_IMG_URL:
             sys.exit()
 
 if YOUTUBE_IMG_URL:
-    if YOUTUBE_IMG_URL != "https://telegra.ph/file/d4fd70279f80c17328615.jpg":
+    if YOUTUBE_IMG_URL != "https://telegra.ph/file/2e3a89053ffe8010bed4c.jpg":
         if not re.match("(?:http|https)://", YOUTUBE_IMG_URL):
             print(
                 "[ERROR] - Your YOUTUBE_IMG_URL url is wrong. Please ensure that it starts with https://"
@@ -417,7 +417,7 @@ if YOUTUBE_IMG_URL:
 
 
 if TELEGRAM_VIDEO_URL:
-    if TELEGRAM_VIDEO_URL != "https://telegra.ph/file/d4fd70279f80c17328615.jpg":
+    if TELEGRAM_VIDEO_URL != "https://telegra.ph/file/2e3a89053ffe8010bed4c.jpg":
         if not re.match("(?:http|https)://", TELEGRAM_VIDEO_URL):
             print(
                 "[ERROR] - Your TELEGRAM_VIDEO_URL url is wrong. Please ensure that it starts with https://"

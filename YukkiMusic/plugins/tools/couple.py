@@ -12,7 +12,7 @@ from YukkiMusic import app
 
 @app.on_message(
     filters.command(
-        ["couples", "couple"],
+        ["couples", "cp"],
         prefixes=["/", "!", "%", ",", "", ".", "@", "#"],
     )
 )

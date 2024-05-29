@@ -77,18 +77,19 @@ async def chk_usr(_, message: Message):
         or first_name != message.from_user.first_name
         or lastname_before != message.from_user.last_name
     ):
+        msg += f"🔔 <b>ᴍᴀᴛᴀ ᴍᴀᴛᴀ</b> 👀\n\n🧸 User: {message.from_user.mention} [<code>{message.from_user.id}</code>]\n"
         if (
             first_name != message.from_user.first_name
             and lastname_before != message.from_user.last_name
         ):
-            msg += f"""ᴜsᴇʀ **{message.from_user.mention}** ᴄʜᴀɴɢᴇᴅ ʜᴇʀ ɴᴀᴍᴇ ғʀᴏᴍ {first_name} {lastname_before} ᴛᴏ {message.from_user.first_name} {message.from_user.last_name}\n"""
+            msg += f"""ᴜsᴇʀ **{message.from_user.mention}** 😈 ᴍᴇɴɢᴜʙᴀʜ ɴᴀᴍᴀ ᴅᴀʀɪ {first_name} {lastname_before} ᴋᴇ {message.from_user.first_name} {message.from_user.last_name}\n"""
         elif first_name != message.from_user.first_name:
-            msg += f"""ᴜsᴇʀ **{message.from_user.mention}** ᴄʜᴀɴɢᴇᴅ ʜᴇʀ ғɪʀsᴛ ɴᴀᴍᴇ ғʀᴏᴍ {first_name} ᴛᴏ {message.from_user.first_name}\n"""
+            msg += f"""ᴜsᴇʀ **{message.from_user.mention}** 😈 ᴍᴇɴɢᴜʙᴀʜ ɴᴀᴍᴀ ᴅᴇᴘᴀɴ ᴅᴀʀɪ {first_name} ᴋᴇ {message.from_user.first_name}\n"""
         elif lastname_before != message.from_user.last_name:
-            msg += f"""ᴜsᴇʀ **{message.from_user.mention}** ᴄʜᴀɴɢᴇᴅ ʜᴇʀ ʟᴀsᴛ ɴᴀᴍᴇ ғʀᴏᴍ {lastname_before} ᴛᴏ {message.from_user.last_name}\n"""
+            msg += f"""ᴜsᴇʀ **{message.from_user.mention}** 😈 ᴍᴇɴɢᴜʙᴀʜ ɴᴀᴍᴀ ʙᴇʟᴀᴋᴀɴɢ ᴅᴀʀɪ {lastname_before} ᴋᴇ {message.from_user.last_name}\n"""
 
         if usernamebefore != message.from_user.username:
-            msg += f"""ᴜsᴇʀ **{message.from_user.mention}** ᴄʜᴀɴɢᴇᴅ ʜᴇʀ ᴜsᴇʀɴᴀᴍᴇ ғʀᴏᴍ @{usernamebefore} to @{message.from_user.username}\n"""
+            msg += f"""ᴜsᴇʀ **{message.from_user.mention}** 😈 ᴍᴇɴɢᴜʙᴀʜ ᴜsᴇʀɴᴀᴍᴇ ᴅᴀʀɪ @{usernamebefore} ᴋᴇ @{message.from_user.username}\n"""
 
         await add_userdata(
             chat_id,
@@ -111,7 +112,7 @@ async def chk_usr(_, message: Message):
 )
 async def set_mataa(_, message: Message):
     if len(message.command) == 1:
-        return await message.reply("**ᴅᴇᴛᴇᴄᴛᴇᴅ ᴘʀᴇᴛᴇɴᴅᴇʀ ᴜsᴀɢᴇ:\n/pretender on|off**")
+        return await message.reply("**ᴅᴇᴛᴇᴄᴛᴇᴅ ᴘʀᴇᴛᴇɴᴅᴇʀ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ:\n/pretender on|off**")
     chat_id = message.chat.id
     if message.command[1] == "on":
         cekset = await check_pretender(chat_id)

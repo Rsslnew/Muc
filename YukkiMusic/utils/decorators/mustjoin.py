@@ -21,8 +21,8 @@ async def must_join_channel(app: Client, msg: Message):
                 chat_info = await app.get_chat(MUST_JOIN)
                 link = chat_info.invite_link
             try:
-                await message.reply(
-                        f"ʜᴀʟʟᴏ ᴋᴀᴋ😊 . ᴀɢᴀʀ ʙɪsᴀ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ʙᴏᴛ ᴀɴᴅᴀ ʜᴀʀᴜs ᴍᴀsᴜᴋ ᴋᴇ ᴄʜᴀɴɴᴇʟ ᴛᴇʀʟᴇʙɪʜ ᴅᴀʜᴜʟᴜ!. sɪʟᴀʜᴋᴀɴ ᴋʟɪᴋ ᴛᴏᴍʙᴏʟ ᴅɪ ʙᴀᴡᴀʜ ᴜɴᴛᴜᴋ ᴊᴏɪɴ ᴋᴇ ᴄʜᴀɴɴᴇʟ, sᴇᴛᴇʟᴀʜ ɪᴛᴜ sɪʟᴀʜᴋᴀɴ ᴘʟᴀʏ ᴍᴜsɪᴋ/ᴠɪᴅᴇᴏ ᴋᴀᴍᴜ",
+                await msg.reply(
+                        f"ʜᴀʟʟᴏ ᴋᴀᴋ😊 . ᴀɢᴀʀ ʙɪsᴀ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ʙᴏᴛ ᴀɴᴅᴀ ʜᴀʀᴜs ᴍᴀsᴜᴋ ᴋᴇ ɢʀᴏᴜᴘ ᴛᴇʀʟᴇʙɪʜ ᴅᴀʜᴜʟᴜ!. sɪʟᴀʜᴋᴀɴ ᴋʟɪᴋ ᴛᴏᴍʙᴏʟ ᴅɪ ʙᴀᴡᴀʜ ᴜɴᴛᴜᴋ ᴊᴏɪɴ ᴋᴇ ɢʀᴏᴜᴘ, sᴇᴛᴇʟᴀʜ ɪᴛᴜ sɪʟᴀʜᴋᴀɴ ᴘʟᴀʏ ᴍᴜsɪᴋ/ᴠɪᴅᴇᴏ ᴋᴀᴍᴜ",
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [

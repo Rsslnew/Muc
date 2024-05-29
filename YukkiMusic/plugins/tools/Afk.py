@@ -3,9 +3,9 @@ from config import BOT_USERNAME
 from pyrogram.enums import MessageEntityType
 from pyrogram import filters
 from pyrogram.types import Message
-from AarohiX import app
-from AarohiX.utils.decorators.readable_time import get_readable_time
-from AarohiX.utils.Databases.afkdb import add_afk, is_afk, remove_afk
+from YukkiMusic import app
+from YukkiMusic.utils.decorators.readable_time import get_readable_time
+from YukkiMusic.utils.Databases.afkdb import add_afk, is_afk, remove_afk
 
 
 

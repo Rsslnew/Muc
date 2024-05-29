@@ -5,7 +5,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 from YukkiMusic import app
 from YukkiMusic.utils.formatters import get_readable_time
-from YukkiMusic.utils.Databases.afkdb import add_afk, is_afk, remove_afk
+from YukkiMusic.utils.databases.afkdb import add_afk, is_afk, remove_afk
 
 
 

@@ -16,6 +16,8 @@ API_HASH = getenv("API_HASH", "b059c9e1b867492f6f65ae8863a9e170")
 # Get it from @Botfather in Telegram.
 BOT_TOKEN = getenv("BOT_TOKEN", "7041791243:AAEs9OPmAX6FbqEl7IRX1UfWdRy-1XMSrq8")
 
+BOT_USERNAME = getenv("BOT_USERNAME", "SpotifyxRelaxBot")
+
 # ________________________________________________________________________________#
 
 ASSISTANT_PREFIX = getenv("ASSISTANT_PREFIX", ".")

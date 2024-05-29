@@ -4,7 +4,7 @@ from pyrogram.enums import MessageEntityType
 from pyrogram import filters
 from pyrogram.types import Message
 from YukkiMusic import app
-from YukkiMusic.utils.formatters.readable_time import get_readable_time
+from YukkiMusic.utils.formatters import get_readable_time
 from YukkiMusic.utils.Databases.afkdb import add_afk, is_afk, remove_afk
 
 

@@ -24,7 +24,7 @@ usersdb = mongodb.tgusersdb
 playlistdb = mongodb.playlist
 blockeddb = mongodb.blockedusers
 privatedb = mongodb.privatechats
-
+afkdb = mongodb.afk
 playlist = []
 
 # Playlist

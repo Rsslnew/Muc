@@ -17,6 +17,8 @@ from YukkiMusic import app
             "slot",
             "bowling",
             "jackpot",
+            "afk",
+            "cp"
         ]
     )
 )

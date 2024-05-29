@@ -91,8 +91,8 @@ async def couples(app, message):
             f"test_{cid}.png",
             caption=TXT,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text=_["CLOSEMENU_BUTTON"],
-callback_data="Tutup")]]
+                [[InlineKeyboardButton(text=" ᴄʟᴏsᴇ ",
+callback_data="close")]]
             ),
         )
         await msg.delete()
@@ -104,5 +104,3 @@ callback_data="Tutup")]]
         os.remove(f"test_{cid}.png")
     except Exception:
         pass
-
-        [InlineKeyboardButton(text=_["CLOSEMENU_BUTTON"], callback_data="close")],

@@ -24,6 +24,7 @@ from config import adminlist
 from strings import get_string
 from YukkiMusic import YouTube, app
 from YukkiMusic.misc import SUDOERS
+from YukkiMusic.utils.sub import subcribe
 from YukkiMusic.utils.database import (
     get_assistant,
     get_cmode,
@@ -69,6 +70,9 @@ def PlayWrapper(command):
                     "**ᴘʀɪᴠᴀᴛᴇ ᴍᴜsɪᴄ ʙᴏᴛ**\n\nᴏɴʟʏ ғᴏʀ ᴀᴜᴛʜᴏʀɪᴢᴇᴅ ᴄʜᴀᴛs ғʀᴏᴍ ᴛʜᴇ ᴏᴡɴᴇʀ. ᴀsᴋ ᴍʏ ᴏᴡɴᴇʀ ᴛᴏ ᴀʟʟᴏᴡ ʏᴏᴜʀ ᴄʜᴀᴛ ғɪʀsᴛ."
                 )
                 return await app.leave_chat(message.chat.id)
+
+        if JOIN_HELA:
+            return await subcribe(client, message)
         if await is_commanddelete_on(message.chat.id):
             try:
                 await message.delete()

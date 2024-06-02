@@ -15,7 +15,7 @@ from config import adminlist
 from strings import get_string
 from YukkiMusic import YouTube, app
 from YukkiMusic.misc import SUDOERS
-from YukkiMusic.utils.sub import subcribe
+from YukkiMusic.utils.sub import must_join_channel
 from YukkiMusic.utils.database import (
     get_assistant,
     get_cmode,

@@ -1,12 +1,3 @@
-#
-# Copyright (C) 2024-present by TeamYukki@Github, < https://github.com/TeamYukki >.
-#
-# This file is part of < https://github.com/TeamYukki/YukkiMusicBot > project,
-# and is released under the "GNU v3.0 License Agreement".
-# Please see < https://github.com/TeamYukki/YukkiMusicBot/blob/master/LICENSE >
-#
-# All rights reserved.
-#
 import asyncio
 
 from pyrogram.enums import ChatMemberStatus
@@ -18,7 +9,7 @@ from pyrogram.errors import (
 )
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from config import PLAYLIST_IMG_URL, PRIVATE_BOT_MODE, JOIN_HELA
+from config import PLAYLIST_IMG_URL, PRIVATE_BOT_MODE, MUST_JOIN
 from config import SUPPORT_GROUP as SUPPORT_CHAT
 from config import adminlist
 from strings import get_string
@@ -71,7 +62,7 @@ def PlayWrapper(command):
                 )
                 return await app.leave_chat(message.chat.id)
 
-        if JOIN_HELA:
+        if MUST_JOIN:
             return await subcribe(client, message)
         if await is_commanddelete_on(message.chat.id):
             try:

@@ -110,9 +110,7 @@ AUTO_LEAVE_ASSISTANT_TIME = int(
     getenv("ASSISTANT_LEAVE_TIME", "50000")
 )  # Remember to give value in Seconds
 
-MUST_JOIN = getenv("MUST_JOIN", "miniiiiupdate")
-if MUST_JOIN.startswith("@"):
-    MUST_JOIN = MUST_JOIN.replace("@", "@miniiiiupdate")
+JOIN_HELA = getenv("JOIN_HELA", "miniiiiupdate")
 
 # ________________________________________________________________________________#
 # Time after which bot will suggest random chats about bot commands.

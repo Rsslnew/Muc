@@ -10,7 +10,7 @@ async def subcribe(client, message):
         return
 
     try:
-        await app.get_chat_member(JOIN_HELA, message.from_user.id)
+        await app.get_chat_member(config.JOIN_HELA, message.from_user.id)
     except UserNotParticipant:
         try:
             link = f"t.me/{config.JOIN_HELA}"

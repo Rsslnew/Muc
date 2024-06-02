@@ -3,7 +3,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 from YukkiMusic import app
 import config
-
+from config import MUST_JOIN
 
 async def subcribe(client, message):
     if not config.MUST_JOIN:

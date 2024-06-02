@@ -15,7 +15,7 @@ async def subcribe(client, message):
         try:
             link = f"t.me/{config.JOIN_DULU}"
             await message.reply(
-                f"**Hay kak {message.from_user.mention}, Silahkan join dulu biar bisa pake bot ini kak**",
+                f"**ʜᴀʟʟᴏ ᴋᴀᴋ😊 {message.from_user.mention} ᴀɢᴀʀ ʙɪsᴀ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ʙᴏᴛ ᴀɴᴅᴀ ʜᴀʀᴜs ᴍᴀsᴜᴋ ᴋᴇ ɢʀᴏᴜᴘ ᴛᴇʀʟᴇʙɪʜ ᴅᴀʜᴜʟᴜ!. sɪʟᴀʜᴋᴀɴ ᴋʟɪᴋ ᴛᴏᴍʙᴏʟ ᴅɪ ʙᴀᴡᴀʜ ᴜɴᴛᴜᴋ ᴊᴏɪɴ ᴋᴇ ɢʀᴏᴜᴘ, sᴇᴛᴇʟᴀʜ ɪᴛᴜ sɪʟᴀʜᴋᴀɴ ᴘʟᴀʏ ᴍᴜsɪᴋ/ᴠɪᴅᴇᴏ ᴋᴀᴍᴜ**",
             reply_markup=InlineKeyboardMarkup(
                   [[InlineKeyboardButton("••ꜱɪʟᴀʜᴋᴀɴ ᴊᴏɪɴ••", url=link)]]
                         ),

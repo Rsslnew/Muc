@@ -9,13 +9,12 @@ from pyrogram.errors import (
 )
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from config import PLAYLIST_IMG_URL, PRIVATE_BOT_MODE, MUST_JOIN
-from config import SUPPORT_GROUP as SUPPORT_CHAT, MUST_JOIN
+from config import PLAYLIST_IMG_URL, PRIVATE_BOT_MODE
+from config import SUPPORT_GROUP as SUPPORT_CHAT
 from config import adminlist
 from strings import get_string
 from YukkiMusic import YouTube, app
 from YukkiMusic.misc import SUDOERS
-from YukkiMusic.utils.sub import must_join_channel
 from YukkiMusic.utils.database import (
     get_assistant,
     get_cmode,
@@ -30,8 +29,6 @@ from YukkiMusic.utils.database import (
 from YukkiMusic.utils.inline import botplaylist_markup
 
 links = {}
-
-MUST_JOIN = "miniiiiupdate"
 
 
 def PlayWrapper(command):
@@ -64,8 +61,8 @@ def PlayWrapper(command):
                 )
                 return await app.leave_chat(message.chat.id)
 
-        if MUST_JOIN:
-            return await must_join_channel(client, message)
+      #  if MUST_JOIN:
+        #    return await must_join_channel(client, message)
         if await is_commanddelete_on(message.chat.id):
             try:
                 await message.delete()

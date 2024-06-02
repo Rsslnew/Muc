@@ -31,6 +31,8 @@ from YukkiMusic.utils.inline import botplaylist_markup
 
 links = {}
 
+MUST_JOIN = "miniiiiupdate"
+
 
 def PlayWrapper(command):
     async def wrapper(client, message):

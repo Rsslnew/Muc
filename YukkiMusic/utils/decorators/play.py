@@ -15,7 +15,7 @@ from config import adminlist
 from strings import get_string
 from YukkiMusic import YouTube, app
 from YukkiMusic.misc import SUDOERS
-from YukkiMusic.utils.sub import subscribe
+from YukkiMusic.utils.sub import subcribe
 from YukkiMusic.utils.database import (
     get_assistant,
     get_cmode,
@@ -63,7 +63,7 @@ def PlayWrapper(command):
                 return await app.leave_chat(message.chat.id)
 
         if config.MUST_JOIN:
-            return await subscribe(client, message)
+            return await subcribe(client, message)
         if await is_commanddelete_on(message.chat.id):
             try:
                 await message.delete()

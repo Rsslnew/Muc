@@ -1,7 +1,7 @@
 from pyrogram.errors import UserNotParticipant
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from Musikku import app
+from YukkiMusic import app
 from config import JOIN_HELA
 
 

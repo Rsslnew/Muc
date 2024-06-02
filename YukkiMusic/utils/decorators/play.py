@@ -9,14 +9,14 @@ from pyrogram.errors import (
 )
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from config import PLAYLIST_IMG_URL, PRIVATE_BOT_MODE, MUST_JOIN
+from config import PLAYLIST_IMG_URL, PRIVATE_BOT_MODE
 from config import SUPPORT_GROUP as SUPPORT_CHAT
 from config import adminlist
 import config
 from strings import get_string
 from YukkiMusic import YouTube, app
 from YukkiMusic.misc import SUDOERS
-from YukkiMusic.utils.sub import subcribe
+#from YukkiMusic.utils.sub import subcribe
 from YukkiMusic.utils.database import (
     get_assistant,
     get_cmode,
@@ -63,8 +63,8 @@ def PlayWrapper(command):
                 )
                 return await app.leave_chat(message.chat.id)
 
-        if config.MUST_JOIN:
-            return await subcribe(client, message)
+       # if config.MUST_JOIN:
+         #   return await subcribe(client, message)
         if await is_commanddelete_on(message.chat.id):
             try:
                 await message.delete()

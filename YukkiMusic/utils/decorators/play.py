@@ -63,7 +63,7 @@ def PlayWrapper(command):
                 return await app.leave_chat(message.chat.id)
 
         if MUST_JOIN:
-            return await subcribe(client, message):
+            return await subcribe(client.message)
         if await is_commanddelete_on(message.chat.id):
             try:
                 await message.delete()

@@ -1,26 +1,40 @@
-from pyrogram.errors import UserNotParticipant
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-
+from pyrogram.errors import ChatAdminRequired, ChatWriteForbidden, UserNotParticipant
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from YukkiMusic import app
-import config
-from config import JOIN_HELA
+from config import MUST_JOIN
 
 
-async def subcribe(client, message):
-    if not JOIN_HELA:
-        return
-
-    try:
-        await app.get_chat_member(config.JOIN_HELA, message.from_user.id)
-    except UserNotParticipant:
+def subcribe(func):
+    async def wrapper(_, message: Message):
+        user_id = message.from_user.id
+        user_name = message.from_user.first_name
+        rpk = "[" + user_name + "](tg://user?id=" + str(user_id) + ")"
+        if not MUST_JOIN:  # Not compulsory
+            return
         try:
-            link = f"t.me/{config.JOIN_HELA}"
-            await message.reply(
-                f"**ʜᴀʟʟᴏ ᴋᴀᴋ😊 {message.from_user.mention} ᴀɢᴀʀ ʙɪsᴀ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ʙᴏᴛ ᴀɴᴅᴀ ʜᴀʀᴜs ᴍᴀsᴜᴋ ᴋᴇ ɢʀᴏᴜᴘ ᴛᴇʀʟᴇʙɪʜ ᴅᴀʜᴜʟᴜ!. sɪʟᴀʜᴋᴀɴ ᴋʟɪᴋ ᴛᴏᴍʙᴏʟ ᴅɪ ʙᴀᴡᴀʜ ᴜɴᴛᴜᴋ ᴊᴏɪɴ ᴋᴇ ɢʀᴏᴜᴘ, sᴇᴛᴇʟᴀʜ ɪᴛᴜ sɪʟᴀʜᴋᴀɴ ᴘʟᴀʏ ᴍᴜsɪᴋ/ᴠɪᴅᴇᴏ ᴋᴀᴍᴜ**",
-            reply_markup=InlineKeyboardMarkup(
-                  [[InlineKeyboardButton("••ꜱɪʟᴀʜᴋᴀɴ ᴊᴏɪɴ••", url=link)]]
+            try:
+                await app.get_chat_member(MUST_JOIN, message.from_user.id)
+            except UserNotParticipant:
+                if MUST_JOIN.isalpha():
+                    yuhu = "https://t.me/" + MUST_JOIN
+                else:
+                    chat_info = await app.get_chat(MUST_JOIN)
+                    chat_info.invite_link
+                try:
+                    await message.reply(
+                        f"ʜᴀʟʟᴏ ᴋᴀᴋ😊 . ᴀɢᴀʀ ʙɪsᴀ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ʙᴏᴛ ᴀɴᴅᴀ ʜᴀʀᴜs ᴍᴀsᴜᴋ ᴋᴇ ᴄʜᴀɴɴᴇʟ ᴛᴇʀʟᴇʙɪʜ ᴅᴀʜᴜʟᴜ!. sɪʟᴀʜᴋᴀɴ ᴋʟɪᴋ ᴛᴏᴍʙᴏʟ ᴅɪ ʙᴀᴡᴀʜ ᴜɴᴛᴜᴋ ᴊᴏɪɴ ᴋᴇ ᴄʜᴀɴɴᴇʟ, sᴇᴛᴇʟᴀʜ ɪᴛᴜ sɪʟᴀʜᴋᴀɴ ᴘʟᴀʏ ᴍᴜsɪᴋ/ᴠɪᴅᴇᴏ ᴋᴀᴍᴜ",
+                        disable_web_page_preview=True,
+                        reply_markup=InlineKeyboardMarkup(
+                            [[InlineKeyboardButton("🎸 ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ ", url=yuhu)]]
                         ),
+                    )
+                    await message.stop_propagation()
+                except ChatWriteForbidden:
+                    pass
+        except ChatAdminRequired:
+            await message.reply(
+                f"Saya bukan admin di chat MUST_JOIN chat : {MUST_JOIN} !"
             )
-        except Exception as e:
-            return await message.reply(f"**ERROR :** {e}")
+        return await func(_, message)
 
+    return wrapper

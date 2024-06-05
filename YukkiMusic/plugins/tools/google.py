@@ -6,7 +6,7 @@ from pyrogram import filters
 from YukkiMusic import api, app
 
 
-@app.on_message(filters.command(["google", "gle"]))
+@app.on_message(filters.command(["google", "cari"]))
 async def google(bot, message):
     if len(message.command) < 2 and not message.reply_to_message:
         await message.reply_text("Example:\n\n`/google lord ram`")

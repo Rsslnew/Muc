@@ -29,7 +29,10 @@ ASSISTANT_PREFIX = getenv("ASSISTANT_PREFIX", ".")
 # ________________________________________________________________________________#
 # Database to save your chats and stats... Get MongoDB:-
 # https://telegra.ph/How-To-get-Mongodb-URI-04-06
-MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://Naka:12345@cluster0.tpjc70h.mongodb.net/?retryWrites=true&w=majority")
+MONGO_DB_URI = getenv(
+    "MONGO_DB_URI",
+    "mongodb+srv://Naka:12345@cluster0.tpjc70h.mongodb.net/?retryWrites=true&w=majority",
+)
 
 
 # ________________________________________________________________________________#
@@ -206,7 +209,10 @@ SET_CMDS = getenv("SET_CMDS", False)
 # ________________________________________________________________________________#
 # You'll need a Pyrogram String Session for these vars. Generate String
 # from our session generator bot @YukkiStringBot
-STRING1 = getenv("STRING_SESSION", "BQDNvmIAdPI9Rz8GWhq3SxmO6l1m5CBl6W9wmBf_aMQQa2NULpUt3tFBDGo56wtjKy_eIThzB4t3A0gH_7_fe0RiO0j5gQbhDRgS7pFYhF2ZiIHfuGunGT_8u8u-fbAaHOguClUsGRXAzWed2-bE7Vsy4YZ7cY2rPamCaYbwg0OXifexStZp6JqrEAEP7a92yvoT4VGNKcEnPXrkl2hSMZesv8zMO8Rml7bmQU0e9Dtjmp6I3C0WsjyKoLlA2L9IMA6hvONKRExQgTQ2KeDWPbr1_KUgO36A-EIJPImdxJFpClijuUT85_FtLujLadnWSsie5_9eL3HK3gf13_VRz0dG0ftrbgAAAABOuR99AA")
+STRING1 = getenv(
+    "STRING_SESSION",
+    "BQDNvmIAdPI9Rz8GWhq3SxmO6l1m5CBl6W9wmBf_aMQQa2NULpUt3tFBDGo56wtjKy_eIThzB4t3A0gH_7_fe0RiO0j5gQbhDRgS7pFYhF2ZiIHfuGunGT_8u8u-fbAaHOguClUsGRXAzWed2-bE7Vsy4YZ7cY2rPamCaYbwg0OXifexStZp6JqrEAEP7a92yvoT4VGNKcEnPXrkl2hSMZesv8zMO8Rml7bmQU0e9Dtjmp6I3C0WsjyKoLlA2L9IMA6hvONKRExQgTQ2KeDWPbr1_KUgO36A-EIJPImdxJFpClijuUT85_FtLujLadnWSsie5_9eL3HK3gf13_VRz0dG0ftrbgAAAABOuR99AA",
+)
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)

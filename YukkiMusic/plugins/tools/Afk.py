@@ -1,12 +1,14 @@
-import time, re
-from config import BOT_USERNAME
-from pyrogram.enums import MessageEntityType
-from pyrogram import filters
-from pyrogram.types import Message
-from YukkiMusic import app
-from YukkiMusic.utils.formatters import get_readable_time
-from YukkiMusic.utils.database.afkdb import add_afk, is_afk, remove_afk
+import re
+import time
 
+from pyrogram import filters
+from pyrogram.enums import MessageEntityType
+from pyrogram.types import Message
+
+from config import BOT_USERNAME
+from YukkiMusic import app
+from YukkiMusic.utils.database.afkdb import add_afk, is_afk, remove_afk
+from YukkiMusic.utils.formatters import get_readable_time
 
 
 @app.on_message(filters.command(["afk", "brb"], prefixes=["/", "!"]))
@@ -94,9 +96,7 @@ async def active_afk(_, message: Message):
             "reason": _reason,
         }
     elif len(message.command) == 1 and message.reply_to_message.photo:
-        await app.download_media(
-            message.reply_to_message, file_name=f"{user_id}.jpg"
-        )
+        await app.download_media(message.reply_to_message, file_name=f"{user_id}.jpg")
         details = {
             "type": "photo",
             "time": time.time(),
@@ -104,9 +104,7 @@ async def active_afk(_, message: Message):
             "reason": None,
         }
     elif len(message.command) > 1 and message.reply_to_message.photo:
-        await app.download_media(
-            message.reply_to_message, file_name=f"{user_id}.jpg"
-        )
+        await app.download_media(message.reply_to_message, file_name=f"{user_id}.jpg")
         _reason = message.text.split(None, 1)[1].strip()
         details = {
             "type": "photo",
@@ -159,10 +157,10 @@ async def active_afk(_, message: Message):
             "reason": None,
         }
 
-    await add_afk(user_id, details)    
-    await message.reply_text(f"{message.from_user.first_name} sᴇᴅᴀɴɢ ᴀғᴋ ᴊᴀɴɢᴀɴ ᴅɪɢᴀɴɢɢᴜ!")
-
-
+    await add_afk(user_id, details)
+    await message.reply_text(
+        f"{message.from_user.first_name} sᴇᴅᴀɴɢ ᴀғᴋ ᴊᴀɴɢᴀɴ ᴅɪɢᴀɴɢɢᴜ!"
+    )
 
 
 chat_watcher_group = 1
@@ -187,8 +185,6 @@ async def chat_watcher_func(_, message):
 
     msg = ""
     replied_user_id = 0
-
-
 
     verifier, reasondb = await is_afk(userid)
     if verifier:
@@ -228,7 +224,6 @@ async def chat_watcher_func(_, message):
         except:
             msg += f"**{user_name[:25]}** sᴜᴅᴀʜ ᴏɴʟɪɴᴇ ʟᴀɢɪ\n\n"
 
-
     if message.reply_to_message:
         try:
             replied_first_name = message.reply_to_message.from_user.first_name
@@ -242,9 +237,7 @@ async def chat_watcher_func(_, message):
                     reasonafk = reasondb["reason"]
                     seenago = get_readable_time((int(time.time() - timeafk)))
                     if afktype == "text":
-                        msg += (
-                            f"**{replied_first_name[:25]}** sᴇᴅᴀɴɢ ᴀғᴋ ᴊᴀɴɢᴀɴ ᴅɪɢᴀɴɢɢᴜ! {seenago}\n\n"
-                        )
+                        msg += f"**{replied_first_name[:25]}** sᴇᴅᴀɴɢ ᴀғᴋ ᴊᴀɴɢᴀɴ ᴅɪɢᴀɴɢɢᴜ! {seenago}\n\n"
                     if afktype == "text_reason":
                         msg += f"**{replied_first_name[:25]}** sᴇᴅᴀɴɢ ᴀғᴋ ᴊᴀɴɢᴀɴ ᴅɪɢᴀɴɢɢᴜ {seenago}\n\nʀᴇᴀsᴏɴ: `{reasonafk}`\n\n"
                     if afktype == "animation":
@@ -298,9 +291,7 @@ async def chat_watcher_func(_, message):
                         reasonafk = reasondb["reason"]
                         seenago = get_readable_time((int(time.time() - timeafk)))
                         if afktype == "text":
-                            msg += (
-                                f"**{user.first_name[:25]}** ʟᴀɢɪ ᴀғᴋ ɢᴀᴜsᴀʜ ɢᴀɴɢɢᴜ! {seenago}\n\n"
-                            )
+                            msg += f"**{user.first_name[:25]}** ʟᴀɢɪ ᴀғᴋ ɢᴀᴜsᴀʜ ɢᴀɴɢɢᴜ! {seenago}\n\n"
                         if afktype == "text_reason":
                             msg += f"**{user.first_name[:25]}** ʟᴀɢɪ ᴀғᴋ ʙᴜᴊᴜɢ! {seenago}\n\nʀᴇᴀsᴏɴ: `{reasonafk}`\n\n"
                         if afktype == "animation":

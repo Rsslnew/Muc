@@ -1,7 +1,7 @@
-from pyrogram import filters
-from pyrogram.types import *
-from YukkiMusic import app
 from gpytranslate import Translator
+from pyrogram import filters
+
+from YukkiMusic import app
 
 # .......
 

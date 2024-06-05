@@ -1,9 +1,9 @@
 from pyrogram.errors import UserNotParticipant
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from YukkiMusic import app
 import config
-from config import MUST_JOIN
+from YukkiMusic import app
+
 
 async def subcribe(client, message):
     if not config.MUST_JOIN:
@@ -16,9 +16,9 @@ async def subcribe(client, message):
             link = f"t.me/{config.MUST_JOIN}"
             await message.reply(
                 f"**Hay kak {message.from_user.mention}, ʜᴀʀᴀᴘ ɢᴀʙᴜɴɢ ᴅᴜʟᴜ ʙɪᴀʀ ʙɪsᴀ ᴘʟᴀʏ ʙᴏᴛ ɪɴɪ ᴋᴀᴋ**",
-            reply_markup=InlineKeyboardMarkup(
-                  [[InlineKeyboardButton("••ꜱɪʟᴀʜᴋᴀɴ ɢᴀʙᴜɴɢ••", url=link)]]
-                        ),
+                reply_markup=InlineKeyboardMarkup(
+                    [[InlineKeyboardButton("••ꜱɪʟᴀʜᴋᴀɴ ɢᴀʙᴜɴɢ••", url=link)]]
+                ),
             )
         except Exception as e:
             return await message.reply(f"**ERROR :** {e}")

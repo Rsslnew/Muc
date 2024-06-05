@@ -10,6 +10,7 @@
 import asyncio
 import time
 from random import choice
+from time import time
 
 from pyrogram import filters
 from pyrogram.enums import ChatType, ParseMode
@@ -38,8 +39,6 @@ from YukkiMusic.utils.decorators.language import LanguageStart
 from YukkiMusic.utils.formatters import get_readable_time
 from YukkiMusic.utils.functions import MARKDOWN, WELCOMEHELP
 from YukkiMusic.utils.inline import alive_panel, help_mark, private_panel, start_pannel
-from time import time
-from YukkiMusic.utils.extraction import extract_user
 
 loop = asyncio.get_running_loop()
 
@@ -187,7 +186,9 @@ async def start_comm(client, message: Message, _):
                     [
                         InlineKeyboardButton(text="🎥 ᴡᴀᴛᴄʜ ", url=f"{link}"),
                         InlineKeyboardButton(text="🔄 ᴄʟᴏsᴇ", callback_data="close"),
-                        InlineKeyboardButton(text="📥 ᴀᴜᴅɪᴏ", callback_data=f"downloadaudio {query}"),
+                        InlineKeyboardButton(
+                            text="📥 ᴀᴜᴅɪᴏ", callback_data=f"downloadaudio {query}"
+                        ),
                     ],
                 ]
             )

@@ -1,14 +1,20 @@
-from YukkiMusic import app as app
-from config import BOT_USERNAME
 from pyrogram import filters
 from pyrogram.types import (
-    InlineQueryResultArticle, InputTextMessageContent,
-    InlineKeyboardMarkup, InlineKeyboardButton
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    InlineQueryResultArticle,
+    InputTextMessageContent,
 )
+
+from config import BOT_USERNAME
+from YukkiMusic import app as app
 
 whisper_db = {}
 
-switch_btn = InlineKeyboardMarkup([[InlineKeyboardButton("💒 Start Whisper", switch_inline_query_current_chat="")]])
+switch_btn = InlineKeyboardMarkup(
+    [[InlineKeyboardButton("💒 Start Whisper", switch_inline_query_current_chat="")]]
+)
+
 
 async def _whisper(_, inline_query):
     data = inline_query.query
@@ -19,9 +25,11 @@ async def _whisper(_, inline_query):
             InlineQueryResultArticle(
                 title="💒 Whisper",
                 description=f"@{BOT_USERNAME} [ USERNAME | ID ] [ TEXT ]",
-                input_message_content=InputTextMessageContent(f"💒 Usage:\n\n@{BOT_USERNAME} [ USERNAME | ID ] [ TEXT ]"),
+                input_message_content=InputTextMessageContent(
+                    f"💒 Usage:\n\n@{BOT_USERNAME} [ USERNAME | ID ] [ TEXT ]"
+                ),
                 thumb_url="https://te.legra.ph/file/3eec679156a393c6a1053.jpg",
-                reply_markup=switch_btn
+                reply_markup=switch_btn,
             )
         ]
     else:
@@ -38,30 +46,54 @@ async def _whisper(_, inline_query):
                 InlineQueryResultArticle(
                     title="💒 Whisper",
                     description="Invalid username or ID!",
-                    input_message_content=InputTextMessageContent("Invalid username or ID!"),
+                    input_message_content=InputTextMessageContent(
+                        "Invalid username or ID!"
+                    ),
                     thumb_url="https://te.legra.ph/file/3eec679156a393c6a1053.jpg",
-                    reply_markup=switch_btn
+                    reply_markup=switch_btn,
                 )
             ]
 
         try:
-            whisper_btn = InlineKeyboardMarkup([[InlineKeyboardButton("💒 Whisper", callback_data=f"fdaywhisper_{inline_query.from_user.id}_{user.id}")]])
-            one_time_whisper_btn = InlineKeyboardMarkup([[InlineKeyboardButton("🔩 One-Time Whisper", callback_data=f"fdaywhisper_{inline_query.from_user.id}_{user.id}_one")]])
+            whisper_btn = InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(
+                            "💒 Whisper",
+                            callback_data=f"fdaywhisper_{inline_query.from_user.id}_{user.id}",
+                        )
+                    ]
+                ]
+            )
+            one_time_whisper_btn = InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton(
+                            "🔩 One-Time Whisper",
+                            callback_data=f"fdaywhisper_{inline_query.from_user.id}_{user.id}_one",
+                        )
+                    ]
+                ]
+            )
             mm = [
                 InlineQueryResultArticle(
                     title="💒 Whisper",
                     description=f"Send a Whisper to {user.first_name}!",
-                    input_message_content=InputTextMessageContent(f"💒 You are sending a whisper to {user.first_name}.\n\nType your message/sentence."),
+                    input_message_content=InputTextMessageContent(
+                        f"💒 You are sending a whisper to {user.first_name}.\n\nType your message/sentence."
+                    ),
                     thumb_url="https://te.legra.ph/file/3eec679156a393c6a1053.jpg",
-                    reply_markup=whisper_btn
+                    reply_markup=whisper_btn,
                 ),
                 InlineQueryResultArticle(
                     title="🔩 One-Time Whisper",
                     description=f"Send a one-time whisper to {user.first_name}!",
-                    input_message_content=InputTextMessageContent(f"🔩 You are sending a one-time whisper to {user.first_name}.\n\nType your message/sentence."),
+                    input_message_content=InputTextMessageContent(
+                        f"🔩 You are sending a one-time whisper to {user.first_name}.\n\nType your message/sentence."
+                    ),
                     thumb_url="https://te.legra.ph/file/3eec679156a393c6a1053.jpg",
-                    reply_markup=one_time_whisper_btn
-                )
+                    reply_markup=one_time_whisper_btn,
+                ),
             ]
         except:
             pass
@@ -84,7 +116,9 @@ async def whispes_cb(_, query):
 
     if user_id not in [from_user, to_user, 6691393517]:
         try:
-            await _.send_message(from_user, f"{query.from_user.mention} is trying to open your whisper.")
+            await _.send_message(
+                from_user, f"{query.from_user.mention} is trying to open your whisper."
+            )
         except Unauthorized:
             pass
 
@@ -97,13 +131,18 @@ async def whispes_cb(_, query):
     except:
         msg = "🚫 Error!\n\nWhisper has been deleted from the database!"
 
-    SWITCH = InlineKeyboardMarkup([[InlineKeyboardButton("Go Inline 🪝", switch_inline_query_current_chat="")]])
+    SWITCH = InlineKeyboardMarkup(
+        [[InlineKeyboardButton("Go Inline 🪝", switch_inline_query_current_chat="")]]
+    )
 
     await query.answer(msg, show_alert=True)
 
     if len(data) > 3 and data[3] == "one":
         if user_id == to_user:
-            await query.edit_message_text("📬 Whisper has been read!\n\nPress the button below to send a whisper!", reply_markup=SWITCH)
+            await query.edit_message_text(
+                "📬 Whisper has been read!\n\nPress the button below to send a whisper!",
+                reply_markup=SWITCH,
+            )
 
 
 async def in_help():
@@ -111,9 +150,11 @@ async def in_help():
         InlineQueryResultArticle(
             title="💒 Whisper",
             description=f"@YumikooBot [USERNAME | ID] [TEXT]",
-            input_message_content=InputTextMessageContent(f"**📍Usage:**\n\n@YumikooBot (Target Username or ID) (Your Message).\n\n**Example:**\n@shernnnq @username I Wanna Phuck You"),
+            input_message_content=InputTextMessageContent(
+                f"**📍Usage:**\n\n@YumikooBot (Target Username or ID) (Your Message).\n\n**Example:**\n@shernnnq @username I Wanna Phuck You"
+            ),
             thumb_url="https://te.legra.ph/file/3eec679156a393c6a1053.jpg",
-            reply_markup=switch_btn
+            reply_markup=switch_btn,
         )
     ]
     return answers

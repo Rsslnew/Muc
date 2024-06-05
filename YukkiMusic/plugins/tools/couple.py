@@ -91,8 +91,7 @@ async def couples(app, message):
             f"test_{cid}.png",
             caption=TXT,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text=" ᴄʟᴏsᴇ ",
-callback_data="close")]]
+                [[InlineKeyboardButton(text=" ᴄʟᴏsᴇ ", callback_data="close")]]
             ),
         )
         await msg.delete()

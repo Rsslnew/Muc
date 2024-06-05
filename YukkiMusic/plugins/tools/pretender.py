@@ -112,7 +112,9 @@ async def chk_usr(_, message: Message):
 )
 async def set_mataa(_, message: Message):
     if len(message.command) == 1:
-        return await message.reply("**ᴅᴇᴛᴇᴄᴛᴇᴅ ᴘʀᴇᴛᴇɴᴅᴇʀ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ:\n/pretender on|off**")
+        return await message.reply(
+            "**ᴅᴇᴛᴇᴄᴛᴇᴅ ᴘʀᴇᴛᴇɴᴅᴇʀ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ:\n/pretender on|off**"
+        )
     chat_id = message.chat.id
     if message.command[1] == "on":
         cekset = await check_pretender(chat_id)

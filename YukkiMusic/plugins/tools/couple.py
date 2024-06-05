@@ -80,7 +80,7 @@ async def couples(app, message):
         img.save(f"test_{cid}.png")
 
         TXT = f"""
-**ᴛᴏᴅᴀʏ's sᴇʟᴇᴄᴛᴇᴅ ᴄᴏᴜᴘʟᴇs 🌺 :
+**ᴛᴏᴅᴀʏ's sᴇʟᴇᴄᴛᴇᴅ ᴘᴀsᴀɴɢᴀɴ 🌺 :
 
 {N1} + {N2} = ❣️
 

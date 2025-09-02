@@ -83,14 +83,14 @@ HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 # For customized or modified Repository
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/ElizabethXty/MusikIndo",
+    "https://github.com/Rsslnew/Muc",
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 
 # GIT TOKEN ( if your edited repo is private)
 GIT_TOKEN = getenv(
     "GIT_TOKEN",
-    "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",
+    "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",
 )
 
 

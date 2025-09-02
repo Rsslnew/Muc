@@ -3,6 +3,7 @@ from logging.handlers import RotatingFileHandler
 from pathlib import Path
 
 from config import LOG_FILE_NAME
+from ..logging import LOGGER, resolve_log_chat_id
 
 # Tentukan path file log (boleh nama file saja, atau "logs/nama.log")
 LOG_PATH = Path(LOG_FILE_NAME)

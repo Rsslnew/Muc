@@ -57,7 +57,7 @@ LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1002742118503"))
 
 # ________________________________________________________________________________#
 # A name for your Music bot.
-MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "SpotifyXBot")
+MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "INDMusicPrimeBot")
 # ________________________________________________________________________________#
 
 PROTECT_CONTENT = getenv("PROTECT_CONTENT", "True")

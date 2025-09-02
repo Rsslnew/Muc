@@ -9,12 +9,12 @@ load_dotenv()
 
 # ________________________________________________________________________________#
 # Get it from my.telegram.org
-API_ID = int(getenv("API_ID", "25347212"))
-API_HASH = getenv("API_HASH", "b059c9e1b867492f6f65ae8863a9e170")
+API_ID = int(getenv("API_ID", "22103239"))
+API_HASH = getenv("API_HASH", "f98fb981d3d04c21a14cafe1c0bcce46")
 
 # ________________________________________________________________________________#
 # Get it from @Botfather in Telegram.
-BOT_TOKEN = getenv("BOT_TOKEN", "7041791243:AAEs9OPmAX6FbqEl7IRX1UfWdRy-1XMSrq8")
+BOT_TOKEN = getenv("BOT_TOKEN", "8261736634:AAFGwYnWmnHKPna2gmhg_19Y_NHqOXzxW9I")
 
 BOT_USERNAME = getenv("BOT_USERNAME", "SpotifyxRelaxBot")
 
@@ -52,7 +52,7 @@ SONG_DOWNLOAD_DURATION = int(
 
 # ________________________________________________________________________________#
 # You'll need a Private Group ID for this.
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1002045851145"))
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1002742118503"))
 
 
 # ________________________________________________________________________________#
@@ -66,7 +66,7 @@ PROTECT_CONTENT = getenv("PROTECT_CONTENT", "True")
 # ________________________________________________________________________________#
 # Your User ID.
 OWNER_ID = list(
-    map(int, getenv("OWNER_ID", "7081940217").split())
+    map(int, getenv("OWNER_ID", "7398795171").split())
 )  # Input type must be interger
 
 
@@ -97,10 +97,10 @@ GIT_TOKEN = getenv(
 # ________________________________________________________________________________#
 # Only  Links formats are  accepted for this Var value.
 SUPPORT_CHANNEL = getenv(
-    "SUPPORT_CHANNEL", "https://t.me/ImseeU"
+    "SUPPORT_CHANNEL", "https://t.me/ACxio999"
 )  # Example:- https://t.me/
 SUPPORT_GROUP = getenv(
-    "SUPPORT_GROUP", "https://t.me/miniiiiupdate"
+    "SUPPORT_GROUP", "https://t.me/ACxio6660"
 )  # Example:- https://t.me/
 
 # ________________________________________________________________________________#
@@ -211,7 +211,10 @@ SET_CMDS = getenv("SET_CMDS", False)
 # from our session generator bot @YukkiStringBot
 STRING1 = getenv(
     "STRING_SESSION",
-    "BQDNvmIAdPI9Rz8GWhq3SxmO6l1m5CBl6W9wmBf_aMQQa2NULpUt3tFBDGo56wtjKy_eIThzB4t3A0gH_7_fe0RiO0j5gQbhDRgS7pFYhF2ZiIHfuGunGT_8u8u-fbAaHOguClUsGRXAzWed2-bE7Vsy4YZ7cY2rPamCaYbwg0OXifexStZp6JqrEAEP7a92yvoT4VGNKcEnPXrkl2hSMZesv8zMO8Rml7bmQU0e9Dtjmp6I3C0WsjyKoLlA2L9IMA6hvONKRExQgTQ2KeDWPbr1_KUgO36A-EIJPImdxJFpClijuUT85_FtLujLadnWSsie5_9eL3HK3gf13_VRz0dG0ftrbgAAAABOuR99AA",
+    "BQFRRMcAZn3rVrriMUmH3RSAo5lMfxYQbPrEJ8l55UC2_kCIQr1s4C1wfhx0N96W2KlEWzxfuAXdGxUaRKB5fI5fAP64Ep1r"
+    "ZZZl8A9bO_4-EQxXeHCF8cvxaGJTYzP6LvF0up7cBDCMqGrwP0rA8MZ0eivK27y5tqALuwkgA-3YBRAcK1Dirb0NyiN-JLp-"
+    "RUHuBBO4ILrgiPs54pekCTcjrUzn_kClK99Md3YKA3l8iSpcr9kNNET2U9uUJhePoMd41pXrIDBhUbS0-bwyIY88_I7mqyCE"
+    "-iY4UJ9FfJ8CMYEwclEuC-F8dCb_v3NcoxltLCNGyY7fG5EVqbPoQ_6HxItcnAAAAAGxhWVoAA",
 )
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)

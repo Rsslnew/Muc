@@ -31,7 +31,7 @@ ASSISTANT_PREFIX = getenv("ASSISTANT_PREFIX", ".")
 # https://telegra.ph/How-To-get-Mongodb-URI-04-06
 MONGO_DB_URI = getenv(
     "MONGO_DB_URI",
-    "mongodb+srv://Naka:12345@cluster0.tpjc70h.mongodb.net/?retryWrites=true&w=majority",
+        "mongodb+srv://musiccnew:music12345@musiccnew.uv0yegc.mongodb.net/?retryWrites=true&w=majority",
 )
 
 
